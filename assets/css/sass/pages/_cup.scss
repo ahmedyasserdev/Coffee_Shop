@@ -1,0 +1,116 @@
+.cup-container {
+  position: relative;
+  top: 50px;
+  max-width: 300px;
+  margin: 0 auto;
+
+  @media (max-width: 767px) {
+    padding-top: 50px;
+    max-width: 220px;
+  }
+
+  .cup {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    transition: all 0.5s ease;
+
+    .top {
+      position: absolute;
+      top: -30px;
+      width: 100%;
+      height: 60px;
+      background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+      border-radius: 50%;
+
+      .circle {
+        position: absolute;
+        height: 50px;
+        width: calc(100% - 20px);
+        background: linear-gradient(to left, #f9f9f9, #d9d9d9);
+        border-radius: 50%;
+        top: 5px;
+        left: 10px;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        .coffee {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: $primary;
+          border-radius: 50%;
+          top: 12px;
+          left: 0;
+        }
+      }
+
+      .vapour {
+        position: relative;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+        span {
+          position: relative;
+          width: 2px;
+          height: 30px;
+          background: #999;
+          display: block;
+          margin: 0 2px;
+          bottom: 50px;
+          border-radius: 50%;
+          animation: vapour 2s ease-in-out infinite;
+          filter: blur(6px);
+          animation-delay: calc(var(--i) * -0.2s);
+        }
+      }
+    }
+
+    .handle {
+      position: absolute;
+      border: 25px solid #dcdcdc;
+      width: 150px;
+      height: 160px;
+      border-left: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      right: -70px;
+      top: 40px;
+      transform: rotate(42deg);
+      border-radius: 50%;
+
+      @media (max-width: 767px) {
+        transform: rotate(53deg);
+        top: 20px;
+        right: -65px;
+        height: 145px  ;
+        -webkit-transform: rotate(53deg);
+        -moz-transform: rotate(53deg);
+        -ms-transform: rotate(53deg);
+        -o-transform: rotate(53deg);
+}
+    }
+  }
+}
+
+@keyframes vapour {
+    0% {
+      transform: translateY(0) scaleX(1);
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    100% {
+      transform: translateY(-60px) scaleX(1.5);
+      opacity: 0;
+    }
+  }

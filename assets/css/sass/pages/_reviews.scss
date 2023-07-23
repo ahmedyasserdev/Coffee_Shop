@@ -1,0 +1,15 @@
+#reviews {
+    .box  {
+        position: relative;
+        color: $primary;
+        &::after {
+            content: "";
+            border-width: 20px;
+            border-style: solid;
+            border-color: $background-color transparent transparent transparent;
+            position: absolute;
+            bottom: -40px;
+            left: 25px;
+        }
+    }
+}
