@@ -181,6 +181,12 @@ input {
   z-index: 2;
 }
 
+.navbar-toggler {
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
 @media (max-width: 991px) {
   .navbar {
     background: none !important;
