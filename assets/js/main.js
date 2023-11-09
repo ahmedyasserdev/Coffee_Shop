@@ -1,5 +1,11 @@
 
 let allLinks = document.querySelectorAll(" .navbar li a")
+const toggler = document.querySelector(".toggler-icon")
+
+
+toggler.onclick = () => {
+  toggler.classList.toggle("fa-times")
+}
 
 
 allLinks.forEach(link => {
@@ -19,40 +25,6 @@ function handleActive(ev, link) {
 
 }
 
-
-let arrow = document.querySelector(".up")
-
-window.onscroll = function () {
-  this.scrollY >= 700 ? arrow.classList.add("show") : arrow.classList.remove("show")
-}
-
-arrow.onclick = function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  })
-}
-
-const audio = new Audio('assets/Music/Music.mkv');
-audio.volume = 0.5;
-
-
-const playButton = document.querySelector('#play-button');
-
-let isPlaying = false;
-
-playButton.addEventListener('click', () => {
-  if (isPlaying) {
-    playButton.textContent = 'Stop';
-    audio.pause();
-  } else {
-
-    playButton.textContent = 'Play';
-    audio.play();
-
-  }
-  isPlaying = !isPlaying;
-});
 
 
 
@@ -90,4 +62,28 @@ showSlides()
 
 
 setInterval(nextSlide, 10000);
+
+
+
+
+
+let arrow = document.querySelector(".up")
+
+window.onscroll =  () =>   {
+
+  const nav = document.querySelector('.navbar-collapse');
+  nav.classList.remove("show")
+  toggler.classList.remove("fa-times")
+
+
+
+  this.scrollY >= 700 ? arrow.classList.add("show") : arrow.classList.remove("show")
+}
+
+arrow.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+}
 

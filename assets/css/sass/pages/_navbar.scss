@@ -1,6 +1,5 @@
-
 .navbar-toggler {
-  border : none !important;
+  border: none !important;
   background: none !important;
   box-shadow: none !important;
 }
@@ -10,67 +9,22 @@
   }
 
   .navbar-nav {
-    width: max-content;
-    perspective: 300px;
-
+    border-radius: 8px;
+    background-color: $white !important;
+    box-shadow: $inset-shadow;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
     .nav-item {
-      animation: rotateX 300ms 1s ease forwards;
-      -webkit-animation: rotateX 300ms 1s ease forwards;
-      transform-origin: top;
-      &:nth-child(2) {
-        animation-delay: 300ms;
-      }
-      &:nth-child(3) {
-        animation-delay: 500ms;
-      }
-      &:nth-child(4) {
-        animation-delay: 700ms;
-      }
-      &:nth-child(5) {
-        animation-delay: 900ms;
-      }
-      &:nth-child(6) {
-        animation-delay: 1000ms;
-      }
-      .nav-link {
-        text-align: center;
+      text-align: center;
+      .nav-link + .nav-link {
         margin-top: 5px !important ;
-        margin-bottom: 5px !important ;
-        border-radius: 8px;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        -ms-border-radius: 8px;
-        -o-border-radius: 8px;
       }
     }
   }
 }
 
 .toggler-icon {
-  outline: none !important ;
   color: $primary;
-}
-
-.nav-link-bg {
-  background-color: rgba($white, 0.5) !important ;
-}
-
-@keyframes rotateX {
-  0% {
-    transform: rotateX(90deg);
-    -webkit-transform: rotateX(90deg);
-    -moz-transform: rotateX(90deg);
-    -ms-transform: rotateX(90deg);
-    -o-transform: rotateX(90deg);
-    opacity: 0;
-  }
-
-  100% {
-    transform: rotateX(0deg);
-    -webkit-transform: rotateX(0deg);
-    -moz-transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
-    -o-transform: rotateX(0deg);
-    opacity: 1;
-  }
 }
